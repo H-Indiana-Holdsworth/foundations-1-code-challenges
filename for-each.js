@@ -15,9 +15,13 @@ Output:
 
 ['spot', 'rover', 'jumpy', 'einstein']
 */
-
 export function makeArrayOfNames(arr) {
-    return [];
+    let nameArray = [];
+        
+    arr.forEach(pet => {
+        nameArray.push(pet.name);
+    });
+    return nameArray;
 }
 
 /*
@@ -27,7 +31,13 @@ Output:
 */
 
 export function makeReversedArrayOfTypes(arr) {
-    return [];
+    let reversedArray = [];
+
+    arr.forEach(pet => {
+        reversedArray.unshift(pet.type);
+    });
+
+    return reversedArray;
 }
 
 /*
@@ -42,6 +52,12 @@ Output:
 */
 
 export function makeSpanishLanguageArray(arr) {
-    return [];
-}
+    arr.forEach(pet => {
+        pet.nombre = pet.name;
+        delete pet.name;
+        pet.tipo = pet.type;
+        delete pet.type;
+    });
 
+    return arr;
+}
